@@ -1,0 +1,480 @@
+_type: export
+__export_format: 4
+__export_date: 2023-09-19T00:01:43.051Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  - _id: req_5885c3f8cf8c4889a28daa98c2682aa4
+    parentId: fld_62e57aa95b99460ebca4266c9dda56db
+    modified: 1695039645903
+    created: 1694809859221
+    url: "{{ _.donation }}/1"
+    name: Listar doação pelo ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694809859221
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_62e57aa95b99460ebca4266c9dda56db
+    parentId: wrk_1b60638f5b844309a654889c4701af1e
+    modified: 1694804739970
+    created: 1694804739970
+    name: Doações
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1694804739970
+    _type: request_group
+  - _id: wrk_1b60638f5b844309a654889c4701af1e
+    parentId: null
+    modified: 1694724969232
+    created: 1694724969232
+    name: Gerenciamento Doações
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_0866084761ed4d79a692f81b911ed3c8
+    parentId: fld_62e57aa95b99460ebca4266c9dda56db
+    modified: 1694805038408
+    created: 1694805018374
+    url: "{{ _.donation }}"
+    name: Listar doações
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694805018374
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9619da01d9f6497c9f87fe60878e694e
+    parentId: fld_62e57aa95b99460ebca4266c9dda56db
+    modified: 1695081082512
+    created: 1694804743599
+    url: "{{ _.donation }}"
+    name: Criar doação
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"value": 1.00,
+        	"donationDate": "15/09/2023",
+        	"paymentMethod": "Pix",
+        	"donor": {
+        		"id": 1,
+        		"name": "Pedro",
+        		"email": "pedro@email.com"
+        	},
+        	"campaign" : {
+        		"id" : 1,
+        		"name": "Nova Campanha",
+        	"description": "Uma nova Campanha",
+        	"goal": 19000.00,
+        	"start": "19/10/2023",
+        	"finish": "24/12/2023"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694804743599
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7c73ebf112b848a68b5cbe601c56c477
+    parentId: fld_3077d78147d940fea96bc788d52fb734
+    modified: 1694785385589
+    created: 1694731266747
+    url: "{{ _.campaign }}/1"
+    name: Atualizar campanha
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"description": "descrição atualizada",
+        	"status": "finalizada"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694731266747
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3077d78147d940fea96bc788d52fb734
+    parentId: wrk_1b60638f5b844309a654889c4701af1e
+    modified: 1694730607104
+    created: 1694730607104
+    name: Campanha
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1694730607104
+    _type: request_group
+  - _id: req_936f44bad42741dcbb53a66366c442f2
+    parentId: fld_3077d78147d940fea96bc788d52fb734
+    modified: 1695068287040
+    created: 1694730611311
+    url: "{{ _.campaign }}"
+    name: Registrar campanha
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Nova Campanha",
+        	"description": "Uma nova Campanha",
+        	"goal": 19000.00,
+        	"start": "19/10/2023",
+        	"finish": "24/12/2023"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694731157920
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e88eabc916504070922d9d4460a77418
+    parentId: fld_3077d78147d940fea96bc788d52fb734
+    modified: 1694731923194
+    created: 1694731102327
+    url: "{{ _.campaign }}"
+    name: Listar campanhas
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694731157870
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b3348ed5cd7c41aaa8f2b1be07d960ad
+    parentId: fld_3077d78147d940fea96bc788d52fb734
+    modified: 1695061597839
+    created: 1694731122264
+    url: "{{ _.campaign }}/1"
+    name: Buscar campanha por ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694731157845
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e2b7408556564489a860fea974d77637
+    parentId: fld_3077d78147d940fea96bc788d52fb734
+    modified: 1694993905630
+    created: 1694731157720
+    url: "{{ _.campaign }}/searchCampaign"
+    name: Buscar campanha pelo Nome
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_1f62db910cb14dfca18cdb0364984346
+        name: name
+        value: Campanha
+        description: ""
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694731157832.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6c08e5e6d36c4b5fb886c68e599a0d4e
+    parentId: fld_3077d78147d940fea96bc788d52fb734
+    modified: 1694731950790
+    created: 1694731202876
+    url: "{{ _.campaign }}/1"
+    name: Deletar campanha
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694731157820
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3868492ce19f4937a3d1e566fc44ec17
+    parentId: fld_75b9be48fb0645fda76f7b5575815866
+    modified: 1695068255982
+    created: 1694724972988
+    url: "{{ _.donor }}"
+    name: Registra doador
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Roberto",
+        	"email": "roberto@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694725715253
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_75b9be48fb0645fda76f7b5575815866
+    parentId: wrk_1b60638f5b844309a654889c4701af1e
+    modified: 1694725705029
+    created: 1694725705029
+    name: Doador
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1694725705029
+    _type: request_group
+  - _id: req_f57384af16cc48be950e64196bb30d3a
+    parentId: fld_75b9be48fb0645fda76f7b5575815866
+    modified: 1694731967015
+    created: 1694725122905
+    url: "{{ _.donor }}"
+    name: Lista doadores
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694725715203
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8c09014265684e68a303d2acd317b452
+    parentId: fld_75b9be48fb0645fda76f7b5575815866
+    modified: 1695052157049
+    created: 1694725248265
+    url: "{{ _.donor }}/2"
+    name: Busca doador pelo ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694725715178
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_981e3b9010734ed6972fcb1e7be10ed5
+    parentId: fld_75b9be48fb0645fda76f7b5575815866
+    modified: 1695052164882
+    created: 1694725293739
+    url: "{{ _.donor }}/donorName"
+    name: Busca doador pelo Nome
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_8113abe02c6d4e86ad13df696c961de0
+        name: name
+        value: Pedro
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694725715171.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_80191497ace649f99028c890f6ce609e
+    parentId: fld_75b9be48fb0645fda76f7b5575815866
+    modified: 1695010801036
+    created: 1694725370298
+    url: "{{ _.donor }}/1"
+    name: Atualiza dados Doador
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Pedro Oliveira"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694725715165.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ae3bb685c46c47da97c3cb72ca36f908
+    parentId: fld_75b9be48fb0645fda76f7b5575815866
+    modified: 1695051679636
+    created: 1694725670529
+    url: "{{ _.donor }}/1"
+    name: Deleta doador
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Insomnia/2023.5.6
+    authentication: {}
+    metaSortKey: -1694725715153
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_7d076bf936afc46d4ce2635f965a4e34d8b60d24
+    parentId: wrk_1b60638f5b844309a654889c4701af1e
+    modified: 1694815862870
+    created: 1694724969235
+    name: Base Environment
+    data:
+      campaign: http://localhost:8080/api/campaign
+      donor: http://localhost:8080/api/donor
+      donation: http://localhost:8080/api/donation
+      donationCampaign: http://localhost:8080/api/donationCampaign
+    dataPropertyOrder:
+      "&":
+        - campaign
+        - donor
+        - donation
+        - donationCampaign
+    color: null
+    isPrivate: false
+    metaSortKey: 1694724969235
+    _type: environment
+  - _id: jar_7d076bf936afc46d4ce2635f965a4e34d8b60d24
+    parentId: wrk_1b60638f5b844309a654889c4701af1e
+    modified: 1694724969237
+    created: 1694724969237
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
